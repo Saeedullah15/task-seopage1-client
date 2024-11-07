@@ -1,4 +1,9 @@
+import { useState } from "react";
+import Modal from "./Modal";
+
 const Card = () => {
+    const [modal, setModal] = useState(false);
+
     return (
         <div className="w-80 space-y-2 p-2 shadow rounded-md bg-white">
             {/* first row */}
@@ -24,8 +29,13 @@ const Card = () => {
                     <img className="w-10 h-10 rounded-full" src="/src/assets/pp1.png" alt="" />
                     <img className="w-10 h-10 rounded-full" src="/src/assets/pp1.png" alt="" />
                 </div>
-                <button className="btn btn-xs btn-primary">attach</button>
+                <button onClick={() => setModal(true)} className="btn btn-xs btn-primary">attach</button>
             </div>
+
+            {/* modal */}
+            {
+                modal && <Modal setModal={setModal}></Modal>
+            }
         </div>
     );
 };
