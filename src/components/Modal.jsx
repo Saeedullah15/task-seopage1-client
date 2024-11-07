@@ -14,7 +14,7 @@ const Modal = ({ setModal, fetchFileCount }) => {
         });
 
         try {
-            const response = await axios.post("http://localhost:5000/upload", formData, {
+            const response = await axios.post("https://task-seopage1-server.vercel.app/upload", formData, {
                 headers: { "Content-Type": "multipart/form-data" },
             });
 

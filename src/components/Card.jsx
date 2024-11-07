@@ -17,7 +17,7 @@ const Card = () => {
 
     const fetchFileCount = async () => {
         try {
-            const response = await axios.get("http://localhost:5000/file-count");
+            const response = await axios.get("https://task-seopage1-server.vercel.app/file-count");
             setFileCount(response.data.count);
         } catch (error) {
             console.error("Error fetching file count:", error);
