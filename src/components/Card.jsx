@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
 import Modal from "./Modal";
 import axios from "axios";
+import { ImAttachment } from "react-icons/im";
+import { IoChatbubblesOutline } from "react-icons/io5";
+import { FaRegCalendarDays } from "react-icons/fa6";
+import { FaBuffer } from "react-icons/fa6";
+import { LuClipboardCheck } from "react-icons/lu";
 
 const Card = () => {
     const [modal, setModal] = useState(false);
@@ -20,34 +25,50 @@ const Card = () => {
     };
 
     return (
-        <div className="w-80 space-y-2 p-2 shadow rounded-md bg-white">
+        <div className="w-80 space-y-3 p-2 shadow rounded-md bg-white mr-1">
             {/* first row */}
             <div className="flex justify-between items-center">
-                <div className="flex items-center">
-                    <img className="w-10 h-10 rounded-full" src="/src/assets/pp1.png" alt="" />
-                    <h3 className="font-semibold">Client name</h3>
+                <div className="flex items-center gap-1">
+                    <img className="w-7 h-7 rounded-full" src="/src/assets/pp1.png" alt="" />
+                    <h3 className="font-semibold text-sm">Alex Sandro</h3>
                 </div>
-                <div className="flex items-center">
-                    <img className="w-10 h-10 rounded-full" src="/src/assets/pp1.png" alt="" />
-                    <h3 className="font-semibold">Client name</h3>
+                <div className="flex items-center gap-1">
+                    <img className="w-7 h-7 rounded-full" src="/src/assets/pp2.png" alt="" />
+                    <h3 className="font-semibold text-sm">Robert John</h3>
                 </div>
             </div>
 
             {/* second row */}
-            <div>
-                <p>Lorem ipsum dolor sit amet.</p>
+            <div className="flex justify-between items-center">
+                <div className="flex items-center gap-2">
+                    <FaBuffer />
+                    <p className="text-xs">Plan and Execute Deployment Strategy...</p>
+                </div>
+                <div className="flex items-center gap-1 bg-gray-100 p-1 rounded-md">
+                    <LuClipboardCheck />
+                    <p className="text-xs font-semibold">1/2</p>
+                </div>
             </div>
 
             {/* third row */}
-            <div className="flex items-center">
-                <div className="flex items-center">
-                    <img className="w-10 h-10 rounded-full" src="/src/assets/pp1.png" alt="" />
-                    <img className="w-10 h-10 rounded-full" src="/src/assets/pp1.png" alt="" />
+            <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                    <img className="w-7 h-7 rounded-full" src="/src/assets/pp3.png" alt="" />
+                    <img className="w-7 h-7 rounded-full" src="/src/assets/pp4.png" alt="" />
+                    <p className="w-8 h-8 rounded-full bg-gray-100 p-1 font-semibold text-sm">12+</p>
+                    <div className="flex items-center space-x-1">
+                        <IoChatbubblesOutline /> <span className="font-semibold text-sm">15</span>
+                    </div>
                 </div>
 
-                <button onClick={() => setModal(true)} className="btn btn-xs btn-primary">attach</button>
+                <div className="flex items-center space-x-1">
+                    <button onClick={() => setModal(true)}><ImAttachment /></button>
+                    <span className="font-semibold">{fileCount}</span>
+                </div>
 
-                <p>Total: </p> {fileCount}
+                <div className="flex items-center space-x-1">
+                    <FaRegCalendarDays /> <span className="font-semibold text-sm">11-8-2024</span>
+                </div>
             </div>
 
             {/* modal */}
